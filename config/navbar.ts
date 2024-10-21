@@ -1,10 +1,10 @@
 import { MarketingConfig } from 'types';
 
-export const marketingConfig: MarketingConfig = {
+export const navbarConfig: MarketingConfig = {
   mainNav: [
     {
-      title: 'Features',
-      href: '/#features'
+      title: 'Home',
+      href: '/'
     },
     {
       title: 'Pricing',

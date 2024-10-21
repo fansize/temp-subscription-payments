@@ -5,7 +5,7 @@ import Hero from '@/components/landing-page/hero';
 export default async function PricingPage() {
 
   return (
-    <div className="min-h-screen">
+    <div>
       <Hero />
       <Pricing />
     </div>

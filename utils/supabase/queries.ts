@@ -6,6 +6,7 @@ export const getUser = cache(async (supabase: SupabaseClient) => {
   const {
     data: { user }
   } = await supabase.auth.getUser();
+  console.log('getUser', user);
   return user;
 });
 
