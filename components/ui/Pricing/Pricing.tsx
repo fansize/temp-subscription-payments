@@ -1,7 +1,6 @@
 'use client';
 
-import Button from '@/components/ui/Button';
-import LogoCloud from '@/components/ui/LogoCloud';
+import { Button } from '@/components/ui/button';
 import type { Tables } from '@/utils/types_db';
 import { getStripe } from '@/utils/stripe/client';
 import { checkoutWithStripe } from '@/utils/stripe/server';
@@ -99,7 +98,6 @@ export default function Pricing({ user, products, subscription }: Props) {
             .
           </p>
         </div>
-        <LogoCloud />
       </section>
     );
   } else {
@@ -181,9 +179,9 @@ export default function Pricing({ user, products, subscription }: Props) {
                       </span>
                     </p>
                     <Button
-                      variant="slim"
+                      variant="outline"
                       type="button"
-                      loading={priceIdLoading === price.id}
+                      // loading={priceIdLoading === price.id}
                       onClick={() => handleStripeCheckout(price)}
                       className="block w-full py-2 mt-8 text-sm font-semibold text-center rounded-md hover:bg-secondary"
                     >
@@ -194,7 +192,6 @@ export default function Pricing({ user, products, subscription }: Props) {
               );
             })}
           </div>
-          <LogoCloud />
         </div>
       </section>
     );

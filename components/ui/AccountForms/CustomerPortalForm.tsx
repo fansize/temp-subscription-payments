@@ -1,11 +1,11 @@
 'use client';
 
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { createStripePortal } from '@/utils/stripe/server';
 import Link from 'next/link';
-import Card from '@/components/ui/Card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tables } from '@/utils/types_db';
 
 type Subscription = Tables<'subscriptions'>;
@@ -45,33 +45,36 @@ export default function CustomerPortalForm({ subscription }: Props) {
   };
 
   return (
-    <Card
-      title="Your Plan"
-      description={
-        subscription
-          ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
-          : 'You are not currently subscribed to any plan.'
-      }
-      footer={
-        <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
-          <p className="pb-4 sm:pb-0">Manage your subscription on Stripe.</p>
+    <Card>
+      <CardHeader>
+        <CardTitle>您的计划</CardTitle>
+        <CardDescription>
+          {subscription
+            ? `您当前使用的是 ${subscription?.prices?.products?.name} 计划。`
+            : '您目前没有订阅任何计划。'}
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="mt-8 mb-4 text-xl font-semibold">
+          {subscription ? (
+            `${subscriptionPrice}/${subscription?.prices?.interval}`
+          ) : (
+            <Link href="/">选择您的计划</Link>
+          )}
+        </div>
+      </CardContent>
+      <CardFooter>
+        <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center w-full">
+          <p className="pb-4 sm:pb-0">在Stripe上管理您的订阅。</p>
           <Button
-            variant="slim"
+            variant="outline"
             onClick={handleStripePortalRequest}
-            loading={isSubmitting}
+            disabled={isSubmitting}
           >
-            Open customer portal
+            打开客户门户
           </Button>
         </div>
-      }
-    >
-      <div className="mt-8 mb-4 text-xl font-semibold">
-        {subscription ? (
-          `${subscriptionPrice}/${subscription?.prices?.interval}`
-        ) : (
-          <Link href="/">Choose your plan</Link>
-        )}
-      </div>
+      </CardFooter>
     </Card>
   );
 }
