@@ -27,12 +27,6 @@ const AvatarCircles = ({
           alt={`Avatar ${index + 1}`}
         />
       ))}
-      <a
-        className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-300 bg-white text-center text-xs font-medium hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black"
-        href=""
-      >
-        +{numPeople}
-      </a>
     </div>
   );
 };

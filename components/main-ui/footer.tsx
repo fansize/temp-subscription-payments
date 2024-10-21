@@ -4,14 +4,11 @@ import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@/utils/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
 import { CoolMode } from '@/components/ui/cool-mode';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+const supabase = createClient();
 
 const AnimatedUnderline = ({
   children,
@@ -35,11 +32,11 @@ export default function Footer() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { error } = await supabase
-        .from('user_email_list')
-        .insert([{ email }]);
+      // const { error } = await supabase
+      // .from('user_email_list')
+      // .insert([{ email }]);
 
-      if (error) throw error;
+      // if (error) throw error;
 
       toast({
         title: 'Subscribed! 🎉',

@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes';
 import * as React from 'react';
-import { Icons } from '@/components/main-ui/icons';
+import { Icons } from '@/components/icons/icons';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -36,29 +36,3 @@ export function ModeToggle() {
     </DropdownMenu>
   );
 }
-
-// 'use client'
-
-// import { useTheme } from 'next-themes'
-// import * as React from 'react'
-// import { Icons } from '@/components/icons'
-// import { Button } from '@/components/ui/button'
-
-// export function ModeToggle() {
-//   const { theme, setTheme } = useTheme()
-
-//   const toggleTheme = () => {
-//     setTheme(theme === 'light' ? 'dark' : 'light')
-//   }
-
-//   return (
-//     <Button className="size-8 px-0" size="sm" variant="ghost" onClick={toggleTheme}>
-//       {theme === 'light' ? (
-//         <Icons.sun className="rotate-0 scale-100 transition-all" />
-//       ) : (
-//         <Icons.moon className="rotate-0 scale-100 transition-all" />
-//       )}
-//       <span className="sr-only">Toggle theme</span>
-//     </Button>
-//   )
-// }

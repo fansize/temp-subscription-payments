@@ -4,7 +4,7 @@ import * as React from 'react';
 import { cn } from '@/utils/cn';
 import Link from 'next/link';
 import { MainNavItem } from 'types';
-import { Icons } from '@/components/main-ui/icons';
+import { Icons } from '@/components/icons/icons';
 import { buttonVariants } from '@/components/ui/button';
 import { ModeToggle } from '@/components/main-ui/mode-toggle';
 import { SunIcon } from 'lucide-react';

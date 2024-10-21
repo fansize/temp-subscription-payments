@@ -97,61 +97,26 @@ export default function PricingRounded({
   if (!displayProducts.length) {
     return (
       <section className="container mx-auto" id="pricing">
-        <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:flex-col sm:align-center"></div>
-          <p className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            No subscription pricing plans found. Create them in your{' '}
-            <a
-              className="text-pink-500 underline"
-              href="https://dashboard.stripe.com/products"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Stripe Dashboard
-            </a>
-            .
-          </p>
-        </div>
+        <p>no data</p>
       </section>
     );
   } else {
     return (
       <section className="container mx-auto" id="pricing">
-        <div className="flex flex-col items-center justify-center w-full min-h-screen py-10 ">
-          <h1 className="text-3xl font-bold text-center">
+        <div className="flex flex-col items-center justify-center w-full py-8 min-h-screen">
+          <h2 className="text-3xl font-bold text-center">
             Flat pricing, no management fees.
-          </h1>
-          <p className="mt-2 text-center text-muted-foreground">
-            Whether you're one person trying to get ahead or a big firm trying
-            to take over the world, we've got a plan for you.
-          </p>
-          {displayProducts.length === 0 && (
-            <p className="mt-4 text-center text-red-500">
-              Note: This is dummy pricing data. Please add your own pricing data
-              in the Stripe Dashboard to see actual plans. Alternatively, you
-              may use the Stripe Fixtures command to create your own pricing
-              data, see{' '}
-              <a
-                href="https://hikari.antoineross.com/docs/configure/stripe/local"
-                className="underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                documentation
-              </a>
-              .
-            </p>
-          )}
+          </h2>
           <div className="flex items-center justify-center mt-6 space-x-4">
             <Button
-              className="rounded-4xl"
+              className="rounded-3xl"
               variant={billingInterval === 'month' ? 'default' : 'outline'}
               onClick={() => setBillingInterval('month')}
             >
               Monthly
             </Button>
             <Button
-              className="rounded-4xl"
+              className="rounded-3xl"
               variant={billingInterval === 'year' ? 'default' : 'outline'}
               onClick={() => setBillingInterval('year')}
             >
@@ -185,9 +150,9 @@ export default function PricingRounded({
               return (
                 <Card
                   key={product.id}
-                  className={`w-full max-w-sm rounded-4xl border-2 ${cardBgColor}`}
+                  className={`w-full max-w-sm rounded-3xl border-2 ${cardBgColor}`}
                 >
-                  <CardHeader className="rounded-t-4xl flex flex-col justify-center">
+                  <CardHeader className="rounded-t-3xl flex flex-col justify-center">
                     <div className="flex items-center">
                       <Moon className="h-8 w-8 text-gray-600 fill-zinc-500" />
                       <CardTitle className="ml-2 text-2xl font-bold">
@@ -204,7 +169,7 @@ export default function PricingRounded({
                       variant="default"
                       type="button"
                       onClick={() => handleStripeCheckout(price)}
-                      className="mt-4 w-full rounded-4xl"
+                      className="mt-4 w-full rounded-3xl"
                     >
                       {subscription ? 'Manage' : 'Subscribe'}
                     </Button>
@@ -245,3 +210,4 @@ function CheckIcon(props: any) {
     </svg>
   );
 }
+
