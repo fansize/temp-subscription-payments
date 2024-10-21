@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes';
 import * as React from 'react';
-import { Icons } from '@/components/hikari/icons';
+import { Icons } from '@/components/main-ui/icons';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,

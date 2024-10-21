@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { MainNavItem } from 'types';
 import { cn } from '@/utils/cn';
 // import { MobileNav } from '@/components/mobile-nav';
-import { Icons } from '@/components/hikari/icons';
+import { Icons } from '@/components/main-ui/icons';
 import { buttonVariants } from '@/components/ui/button';
-import { ModeToggle } from '@/components/hikari/mode-toggle';
+import { ModeToggle } from '@/components/main-ui/mode-toggle';
 import { SunIcon } from 'lucide-react';
 
 interface CircularNavProps {

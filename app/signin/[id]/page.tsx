@@ -9,13 +9,13 @@ import {
   getRedirectMethod
 } from '@/utils/auth-helpers/settings';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import PasswordSignIn from '@/components/ui/AuthForms/PasswordSignIn';
-import EmailSignIn from '@/components/ui/AuthForms/EmailSignIn';
-import Separator from '@/components/ui/AuthForms/Separator';
-import OauthSignIn from '@/components/ui/AuthForms/OauthSignIn';
-import ForgotPassword from '@/components/ui/AuthForms/ForgotPassword';
-import UpdatePassword from '@/components/ui/AuthForms/UpdatePassword';
-import SignUp from '@/components/ui/AuthForms/Signup';
+import PasswordSignIn from '@/components/auth-page/PasswordSignIn';
+import EmailSignIn from '@/components/auth-page/EmailSignIn';
+import Separator from '@/components/auth-page/Separator';
+import OauthSignIn from '@/components/auth-page/OauthSignIn';
+import ForgotPassword from '@/components/auth-page/ForgotPassword';
+import UpdatePassword from '@/components/auth-page/UpdatePassword';
+import SignUp from '@/components/auth-page/Signup';
 
 export default async function SignIn({
   params,

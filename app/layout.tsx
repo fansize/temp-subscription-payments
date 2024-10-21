@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
-import Footer from '@/components/hikari/footer';
+import Footer from '@/components/main-ui/footer';
 import { marketingConfig } from '@/config/marketing';
-import CircularNavigation from '@/components/hikari/navigation';
+import CircularNavigation from '@/components/main-ui/navigation';
 import { Toaster } from '@/components/ui/toaster';
 import { PropsWithChildren, Suspense } from 'react';
 import { getURL } from '@/utils/helpers';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from '@/components/main-ui/theme-provider';
 import 'styles/globals.css';
 
 import { getUser } from '@/utils/supabase/queries';

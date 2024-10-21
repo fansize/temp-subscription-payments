@@ -7,7 +7,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import { MainNavItem } from 'types';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/utils/cn';
-import { Icons } from '@/components/hikari/icons';
+import { Icons } from '@/components/main-ui/icons';
 // import { MobileNav } from '@/components/hikari/mobile-nav';
 
 interface MainNavProps {
